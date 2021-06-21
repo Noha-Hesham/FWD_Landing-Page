@@ -68,10 +68,17 @@ section {
     padding-left: 0;
     margin: 0;
     text-align: right;
+    color:rgb(0, 0, 180);
 }
 
 .navbar__menu li {
     display: inline-block;
+}
+.navbar__menu li:hover{
+    border: 2px solid rgb(0, 0, 180);
+    border-radius: 4px;
+    margin: 4px;
+    padding: 3px;
 }
 
 .navbar__menu .menu__link {
@@ -84,17 +91,23 @@ section {
 
 .navbar__menu .menu__link:hover {
     background: #333;
-    color: #fff;
+    color: light #fff;
     transition: ease 0.3s all;
 }
 
 /* Header Styles */
 .page__header {
     background: #fff;
+    opacity: 0.3;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 5;
+    padding: 5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+
 }
 
 /* Footer Styles */
@@ -221,3 +234,4 @@ section.your-active-class .landing__container::after {
 		           rotate(-360deg);
 	}
 }
+

@@ -55,3 +55,23 @@
 // Set sections as active
 
 
+const sections = document.querySelectorAll("section");
+const myul = document.getElementById("navbar__list");
+const fragment = document.createDocumentFragment();
+
+sections.forEach((elm, index)=> {
+    let linkTxt = elm.getAttribute("data-nav");
+    let nwLink = document.createElement("a");
+    let nodeText = document.createTextNode(linkTxt);
+    let nwli = document.createElement("li");
+
+    nwLink.appendChild(nodeText);
+    nwli.appendChild(nwLink);
+    nwLink.addEventListener("click", () => {
+        elm.scrollIntoView({behavior:"smooth"});
+    })
+    fragment.appendChild(nwli)
+
+})
+
+myul.appendChild(fragment);
