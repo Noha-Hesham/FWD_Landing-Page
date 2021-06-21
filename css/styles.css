@@ -73,12 +73,16 @@ section {
 
 .navbar__menu li {
     display: inline-block;
+    justify-content: space-around;
+    width: 9%;
+
 }
 .navbar__menu li:hover{
     border: 2px solid rgb(0, 0, 180);
     border-radius: 4px;
     margin: 4px;
     padding: 3px;
+    text-align: center;
 }
 
 .navbar__menu .menu__link {
