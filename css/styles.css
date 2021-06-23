@@ -79,10 +79,11 @@ section {
 }
 .navbar__menu li:hover{
     border: 2px solid rgb(0, 0, 180);
-    border-radius: 4px;
+    border-radius: 20px;
     margin: 4px;
-    padding: 3px;
+    padding: 4px;
     text-align: center;
+    font-weight: bold;
 }
 
 .navbar__menu .menu__link {
@@ -101,8 +102,8 @@ section {
 
 /* Header Styles */
 .page__header {
-    background: #fff;
-    opacity: 0.3;
+    background: rgb(246, 248, 110);
+    opacity: 0.6;
     position: fixed;
     top: 0;
     width: 100%;
@@ -208,24 +209,24 @@ section:nth-of-type(3n + 1) .landing__container::after {
 
 
 /* ---- Theme State Rules ---- */
-/* Section Active Styles */
-/* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
-section.your-active-class {
+/* Section activeSection Styles */
+/* Note: activeSection class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
+section.activeSection {
     background: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
-section.your-active-class .landing__container::before {
+section.activeSection .landing__container::before {
     opacity: 1;
     animation: rotate 4s linear 0s infinite forwards;
 }
 
-section.your-active-class .landing__container::after {
+section.activeSection .landing__container::after {
     opacity: 1;
     animation: rotate 5s linear 0s infinite forwards reverse;
 }
 
-/* Section Active Styles Keyframe Animations */
+/* Section activeSection Styles Keyframe Animations */
 @keyframes rotate {
 	from {
 		transform: rotate(0deg)
@@ -237,5 +238,16 @@ section.your-active-class .landing__container::after {
 		           translate(-1em) 
 		           rotate(-360deg);
 	}
+}
+
+.activeLink {
+    color: rgb(246, 248, 110);
+    background-color:rgb(0, 0, 102);
+    border: 2px solid rgb(0, 0, 102);
+    border-radius: 20px;
+    margin: 4px;
+    padding: 4px;
+    text-align: center;
+    font-weight: bold;
 }
 
