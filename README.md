@@ -10,7 +10,10 @@
 
 ## content of the page
 
-* 
+* header
+* footer
+* 4 sections
 ## functionality of the page
 
- * 
+ * highlighting navigation bar link while scrolling it section
+ * navigate to and highlight section when clicking on it link from nav-bar

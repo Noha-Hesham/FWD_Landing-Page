@@ -17,7 +17,9 @@ sections.forEach((elm, index)=> {
     let linkTxt = elm.getAttribute("data-nav");
     let nwLink = document.createElement("a");
     let nodeText = document.createTextNode(linkTxt);
-    let nwli = document.createElement("li");  
+    let nwli = document.createElement("li");
+    let linkId= document.createElement('link'); 
+    linkId.setAttribute("id", "link"); 
 //adding the new links
     nwLink.appendChild(nodeText);
     nwli.appendChild(nwLink);
@@ -42,11 +44,11 @@ sections.forEach((elm, index)=> {
 
 //highlihgt links while scrolling
     window.addEventListener("scroll", () => {
+
             domRect = elm.getBoundingClientRect();
             if (domRect.top>0 && domRect.top<300) {
                 nwli.classList.add("activeLink");
             }
-            
         });
         
     })
