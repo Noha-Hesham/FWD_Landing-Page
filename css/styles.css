@@ -46,11 +46,11 @@ p {
 }
 
 /* ---- Layout Rules ---- */
-main {
+headerMain {
     margin: 10vh 1em 10vh;
 }
 
-.main-hero {
+.headerMain-hero {
     min-height: 40vh;
     padding-top: 3em;
 }
@@ -64,20 +64,20 @@ section {
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
-.navbar__menu ul {
+.navbarMenu ul {
     padding-left: 0;
     margin: 0;
     text-align: right;
     color:rgb(0, 0, 180);
 }
 
-.navbar__menu li {
+.navbarMenu li {
     display: inline-block;
     justify-content: space-around;
     width: 9%;
 
 }
-.navbar__menu li:hover{
+.navbarMenu li:hover{
     color: rgb(246, 248, 110);
     background-color:rgb(0, 0, 102);
     border-radius: 20px;
@@ -88,7 +88,7 @@ section {
     font-weight: bold;
 }
 
-.navbar__menu .menu__link {
+.navbarMenu .menu__link {
     display: block;
     padding: 1em;
     font-weight: bold;
@@ -96,14 +96,14 @@ section {
     color: #000;
 }
 
-.navbar__menu .menu__link:hover {
+.navbarMenu .menu__link:hover {
     background: #333;
     color: light #fff;
     transition: ease 0.3s all;
 }
 
 /* Header Styles */
-.page__header {
+.pageHeader {
     background: rgb(246, 248, 110);
     opacity: 0.6;
     position: fixed;
@@ -118,32 +118,32 @@ section {
 }
 
 /* Footer Styles */
-.page__footer {
+.pageFooter {
     background: #000;
     padding: 3em;
     color: #fff;
 }
 
-.page__footer p{
+.pageFooter p{
     color: #fff;
 }
 
 
 /* ---- Theme Rules ---- */
 /* Landing Container Styles */
-.landing__container {
+.container {
     padding: 1em;
     text-align: left;
 }
 
 @media only screen and (min-width: 35em){
-    .landing__container {
+    .container {
         max-width: 50em;
         padding: 4em;
     }
 }
 
-section:nth-of-type(even) .landing__container {
+section:nth-of-type(even) .container {
     margin-right: 0;
     margin-left: auto;
     text-align: right; 
@@ -152,7 +152,7 @@ section:nth-of-type(even) .landing__container {
 /* Background Circles */
 /* Note that background circles are created with psuedo elements before and after */
 /* Circles appear to be random do to use of :nth-of-type psuedo class */
-section:nth-of-type(odd) .landing__container::before {
+section:nth-of-type(odd) .container::before {
     content: '';
     background: rgba(255, 255, 255, 0.187);
     position: absolute;
@@ -164,7 +164,7 @@ section:nth-of-type(odd) .landing__container::before {
     transition: ease 0.5s all;
 }
 
-section:nth-of-type(even) .landing__container::before {
+section:nth-of-type(even) .container::before {
     content: '';
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
@@ -179,7 +179,7 @@ section:nth-of-type(even) .landing__container::before {
     transition: ease 0.5s all;
 }
 
-section:nth-of-type(3n) .landing__container::after {
+section:nth-of-type(3n) .container::after {
     content: '';
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
@@ -194,7 +194,7 @@ section:nth-of-type(3n) .landing__container::after {
     transition: ease 0.5s all;
 }
 
-section:nth-of-type(3n + 1) .landing__container::after {
+section:nth-of-type(3n + 1) .container::after {
     content: '';
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
@@ -218,12 +218,12 @@ section.activeSection {
     background: linear-gradient(0deg, rgb(143, 224, 238) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
-section.activeSection .landing__container::before {
+section.activeSection .container::before {
     opacity: 1;
     animation: rotate 4s linear 0s infinite forwards;
 }
 
-section.activeSection .landing__container::after {
+section.activeSection .container::after {
     opacity: 1;
     animation: rotate 5s linear 0s infinite forwards reverse;
 }

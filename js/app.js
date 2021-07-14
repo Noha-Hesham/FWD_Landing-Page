@@ -4,8 +4,8 @@
 */
 
 const sections = document.querySelectorAll("section");
-const myul = document.getElementById("navbar__list");
-const fragment = document.createDocumentFragment();
+const ul = document.getElementById("navbarList");
+const fragAction = document.createDocumentFragment();
 
 /**
  * End Global Variables
@@ -15,22 +15,22 @@ const fragment = document.createDocumentFragment();
 
 //create links
 sections.forEach((elm, index)=> {
-    let linkTxt = elm.getAttribute("data-nav");
-    let nwLink = document.createElement("a");
-    let nodeText = document.createTextNode(linkTxt);
-    let nwli = document.createElement("li");
-    let linkId= document.createElement('link'); 
-    linkId.setAttribute("id", "link"); 
+    let textLink = elm.getAttribute("data-nav");
+    let liNewnk = document.createElement("a");
+    let textNode = document.createTextNode(textLink);
+    let liNew = document.createElement("li");
+    let idLink= document.createElement('link'); 
+    idLink.setAttribute("id", "link"); 
 //adding the new links
-    nwLink.appendChild(nodeText);
-    nwli.appendChild(nwLink);
+    liNewnk.appendChild(textNode);
+    liNew.appendChild(liNewnk);
 
 //navigate to sections when click
-    nwli.addEventListener("click", () => {
+    liNew.addEventListener("click", () => {
         elm.scrollIntoView({behavior:"smooth"}); //scroll to section
     })
 
-    fragment.appendChild(nwli)
+    fragAction.appendChild(liNew)
 
 
 //highlihgt links and sections while scrolling
@@ -39,10 +39,10 @@ sections.forEach((elm, index)=> {
             elm.classList.remove("activeSection");
             if (domRect.top>=0 && domRect.top<350) {
                 elm.classList.add("activeSection");
-                nwli.classList.add("activeLink");
+                liNew.classList.add("activeLink");
             }
             else {
-                nwli.classList.remove("activeLink");
+                liNew.classList.remove("activeLink");
             }
         });
     
@@ -51,6 +51,6 @@ sections.forEach((elm, index)=> {
 });
 
 
-myul.appendChild(fragment);
+ul.appendChild(fragAction);
 
 
