@@ -2,10 +2,10 @@
  * Define Global Variables
  * 
 */
-
 const sections = document.querySelectorAll("section");
 const myul = document.getElementById("navbar__list");
 const fragment = document.createDocumentFragment();
+
 
 /**
  * End Global Variables
@@ -13,7 +13,6 @@ const fragment = document.createDocumentFragment();
  * 
 */
 
-//create links
 sections.forEach((elm, index)=> {
     let linkTxt = elm.getAttribute("data-nav");
     let nwLink = document.createElement("a");
@@ -25,32 +24,38 @@ sections.forEach((elm, index)=> {
     nwLink.appendChild(nodeText);
     nwli.appendChild(nwLink);
 
-//navigate to sections when click
-    nwli.addEventListener("click", () => {
-        elm.scrollIntoView({behavior:"smooth"}); //scroll to section
+//adding listener to click
+    nwLink.addEventListener("click", () => {
+        elm.scrollIntoView({behavior:"smooth"});
+        elm.classList.add("selected");
     })
-
     fragment.appendChild(nwli)
 
+//adding listener to highlight sections while scrolling
+    window.addEventListener("scroll", function() {
+        elm.classList.add("activeSection");
+    })
 
-//highlihgt links and sections while scrolling
+    // window.addEventListener("scroll", () => {
+    //     if (elm.classList.contains("selected")) {
+    //         nwli.classList.add("activeLink");
+    //     }
+    // })
+
+//highlihgt links while scrolling
     window.addEventListener("scroll", () => {
+
             domRect = elm.getBoundingClientRect();
-            elm.classList.remove("activeSection");
-            if (domRect.top>=0 && domRect.top<350) {
-                elm.classList.add("activeSection");
+            if (domRect.top>0 && domRect.top<300) {
                 nwli.classList.add("activeLink");
             }
-            else {
-                nwli.classList.remove("activeLink");
-            }
         });
-    
-    
-
-});
-
+        
+    })
 
 myul.appendChild(fragment);
+
+
+
 
 

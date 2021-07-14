@@ -78,12 +78,10 @@ section {
 
 }
 .navbar__menu li:hover{
-    color: rgb(246, 248, 110);
-    background-color:rgb(0, 0, 102);
+    border: 2px solid rgb(0, 0, 180);
     border-radius: 20px;
     margin: 4px;
     padding: 4px;
-    border:2px;
     text-align: center;
     font-weight: bold;
 }
@@ -214,8 +212,8 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* Section activeSection Styles */
 /* Note: activeSection class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
 section.activeSection {
-    background: rgb(143, 224, 238);
-    background: linear-gradient(0deg, rgb(143, 224, 238) 0%, rgba(0, 0, 0, 0) 100%);
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 section.activeSection .landing__container::before {
@@ -245,10 +243,10 @@ section.activeSection .landing__container::after {
 .activeLink {
     color: rgb(246, 248, 110);
     background-color:rgb(0, 0, 102);
+    border: 2px solid rgb(0, 0, 102);
     border-radius: 20px;
     margin: 4px;
     padding: 4px;
-    border:2px;
     text-align: center;
     font-weight: bold;
 }
